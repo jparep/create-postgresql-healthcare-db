@@ -1,0 +1,28 @@
+# Ignore Docker-related files
+docker-compose.override.yml
+docker-compose.override.yaml
+docker-compose.prod.yml
+docker-compose.prod.yaml
+
+# Ignore PostgreSQL data directory
+pgdata/
+
+# Ignore environment variable files
+.env
+.env.*
+
+# Ignore log files
+*.log
+
+# Ignore node_modules if using Node.js
+node_modules/
+
+# Ignore Python virtual environment if using Python
+venv/
+__pycache__/
+*.pyc
+
+# Ignore IDE/editor specific files
+.vscode/
+.idea/
+*.swp
