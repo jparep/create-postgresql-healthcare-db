@@ -24,3 +24,14 @@ CREATE TABLE vital_health_db.medical_records (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Create the Billing table
+CREATE TABLE vital_health_db.billing (
+    bill_id SERIAL PRIMARY KEY,
+    patient_id INT REFERENCES vital_health_db.patients(patient_id) ON DELETE CASCADE,
+    amount DECIMAL(10,2), -- Using DECIMAL instead of FLOAT for accurate currency storage
+    payment_status VARCHAR(50) CHECK (payment_status IN ('Pending', 'Paid', 'Overdue')),
+    invoice_date DATE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
