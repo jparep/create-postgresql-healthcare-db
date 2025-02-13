@@ -35,3 +35,8 @@ CREATE TABLE vital_health_db.billing (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- End of init script
+-- docker-compose up -d
+-- psql -U dbuser -d vital_health_db -h localhost -p 5433
+
